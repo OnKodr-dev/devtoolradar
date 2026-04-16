@@ -144,6 +144,11 @@ The developers getting the most value from AI in 2026 aren't debating which tool
 
 If you haven't tried both in your workflow yet, start today. The learning curve for each is low, the free tiers are generous, and the productivity gains are real.
 
+## Try These Tools Yourself
+
+- **Cursor** — [Start free trial](https://cursor.com) — AI-native code editor
+- **Claude** — [Try Claude free](https://claude.ai) — AI assistant for developers
+
 ---
 
 *Have thoughts on how you use Claude or Cursor in your workflow? The best setups are always evolving — so is the tooling.*
