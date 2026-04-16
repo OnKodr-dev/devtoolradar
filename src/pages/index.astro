@@ -26,9 +26,14 @@ const posts = (await getCollection('blog'))
 			<section class="cards">
 				{posts.map((post) => (
 					<a class="card" href={`/blog/${post.id}/`}>
-						<p class="date"><FormattedDate date={post.data.pubDate} /></p>
-						<h2>{post.data.title}</h2>
-						{post.data.description && <p class="desc">{post.data.description}</p>}
+						{post.data.heroImage && (
+							<img class="thumb" src={post.data.heroImage} alt="" />
+						)}
+						<div class="card-body">
+							<p class="date"><FormattedDate date={post.data.pubDate} /></p>
+							<h2>{post.data.title}</h2>
+							{post.data.description && <p class="desc">{post.data.description}</p>}
+						</div>
 					</a>
 				))}
 			</section>
@@ -68,13 +73,29 @@ const posts = (await getCollection('blog'))
 	}
 
 	.card {
-		display: block;
-		padding: 1.5rem;
+		display: flex;
+		gap: 1.25rem;
+		align-items: flex-start;
+		padding: 1.25rem;
 		border: 1px solid #e5e7eb;
 		border-radius: 10px;
 		text-decoration: none;
 		color: inherit;
 		transition: border-color 0.15s, box-shadow 0.15s;
+	}
+
+	.thumb {
+		flex-shrink: 0;
+		width: 160px;
+		height: 100px;
+		object-fit: cover;
+		border-radius: 6px;
+	}
+
+	.card-body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
 	}
 
 	.card:hover {
