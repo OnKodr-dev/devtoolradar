@@ -1,8 +1,7 @@
 ---
 title: 'Claude vs Cursor: Which AI Coding Tool is Better in 2025?'
-description: 'A detailed comparison of Claude and Cursor for developers. Which AI coding assistant should you choose?'
+description: 'A practical side-by-side comparison of Claude and Cursor for developers — and when to use each one.'
 pubDate: '2025-04-16'
-heroImage: '/blog-placeholder-1.jpg'
 ---
 
 # Claude vs. Cursor: Which AI Tool Should Developers Use in 2026?
