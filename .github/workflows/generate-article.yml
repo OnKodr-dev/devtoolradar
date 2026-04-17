@@ -1,0 +1,56 @@
+name: Generate Article
+
+on:
+  schedule:
+    - cron: '0 9 * * 1,3,5'  # Monday, Wednesday, Friday at 9:00 UTC
+  workflow_dispatch:          # allow manual trigger
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Pick keyword
+        id: keyword
+        run: |
+          KEYWORDS=(
+            "best ai coding tools 2025"
+            "github copilot alternatives"
+            "cursor vs vscode"
+            "best developer tools 2025"
+            "ai code review tools"
+            "best python libraries for developers"
+            "claude api tutorial"
+            "codeium vs copilot"
+            "tabnine review 2025"
+            "best ide for python"
+          )
+          INDEX=$(( $(date +%s) / 86400 % ${#KEYWORDS[@]} ))
+          KEYWORD="${KEYWORDS[$INDEX]}"
+          echo "keyword=$KEYWORD" >> $GITHUB_OUTPUT
+          echo "Selected keyword: $KEYWORD"
+
+      - name: Generate article
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: python scripts/generate_article.py "${{ steps.keyword.outputs.keyword }}"
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/content/blog/ public/
+          git diff --staged --quiet || git commit -m "article: ${{ steps.keyword.outputs.keyword }}"
+          git push
