@@ -1,63 +1,63 @@
-# Astro Starter Kit: Blog
+# DevToolRadar
 
-```sh
-npm create astro@latest -- --template blog
+DevToolRadar is an Astro-based web project for publishing and organizing content about developer tools.
+
+The project is built on Astro with Markdown/MDX content support, RSS, sitemap generation and a performance-focused static-site workflow.
+
+## Features
+
+- Astro static-site project
+- Markdown and MDX content support
+- RSS feed support
+- Sitemap support
+- SEO-friendly static-site foundation
+- Fast local development and production build workflow
+
+## Tech stack
+
+- Astro
+- MDX
+- RSS
+- Sitemap
+- Sharp
+- Node.js
+
+## Getting started
+
+This project requires Node.js 22.12 or newer.
+
+Install dependencies:
+
+```bash
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Start the development server:
 
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```bash
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Build the site:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+npm run build
+```
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Preview the production build:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+npm run preview
+```
 
-## 🧞 Commands
+## Project status
 
-All commands are run from the root of the project, from a terminal:
+Work in progress. This repository is part of my frontend/content-site portfolio.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## What I learned
 
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+- Working with Astro
+- Structuring a static content website
+- Using Markdown/MDX collections
+- Preparing SEO, RSS and sitemap basics
+- Building a performance-focused web project
